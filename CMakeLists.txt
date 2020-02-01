@@ -146,6 +146,16 @@ add_executable(${PROJECT_NAME}_test_conv_layer src/tests/test_conv_layer.cpp)
 add_executable(${PROJECT_NAME}_test_lenet src/tests/test_lenet.cpp)
 add_executable(${PROJECT_NAME}_test_service src/tests/test_service.cpp)
 
+add_dependencies(${PROJECT_NAME}_detect_grasps ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_detect_grasps_server ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_generate_candidates ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_create_grasp_images ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_classify_candidates ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_test_occlusion ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_test_grasp_image ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_test_conv_layer ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_test_lenet ${PROJECT_NAME}_generate_messages )
+add_dependencies(${PROJECT_NAME}_test_service ${PROJECT_NAME}_generate_messages )
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -180,7 +190,7 @@ target_link_libraries(${PROJECT_NAME}_grasp_detector
                       ${GENERATOR_LIB}
                       ${catkin_LIBRARIES})
 
-target_link_libraries(${PROJECT_NAME}_grasp_plotter                      
+target_link_libraries(${PROJECT_NAME}_grasp_plotter
                       ${GENERATOR_LIB}
                       ${catkin_LIBRARIES})
 
