@@ -35,8 +35,8 @@
     <!-- Preprocessing of point cloud -->
     <param name="voxelize" value="true"/>
     <param name="remove_outliers" value="false"/>
-    <rosparam param="workspace"> [-1, 1, -1, 1, -1, 1] </rosparam>
-    <rosparam param="camera_position"> [0, 0, 0] </rosparam>
+    <rosparam param="workspace"> [0, 1, -1, 1, 0, 2] </rosparam>
+    <rosparam param="camera_position"> [0, -0.5, 1.5] </rosparam>
             
     <!-- General parameters -->
     <param name="num_samples" value="100" />
@@ -69,7 +69,7 @@
     <param name="min_score_diff" value="0" />
     <param name="min_aperture" value="0.029" />
     <param name="max_aperture" value="0.072" />
-    <param name="num_selected" value="5" />
+    <param name="num_selected" value="15" />
         
 	</node>
   
