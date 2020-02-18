@@ -7,6 +7,11 @@ project(gpd)
 find_package(catkin REQUIRED COMPONENTS cmake_modules eigen_conversions geometry_msgs message_generation roscpp
   sensor_msgs std_msgs)
 
+# Installation
+execute_process (
+    COMMAND bash -c "../src/gpd/install.sh"
+)
+
 # PCL
 find_package(PCL REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
